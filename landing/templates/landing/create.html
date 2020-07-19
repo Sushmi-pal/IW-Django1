@@ -1,0 +1,12 @@
+{% extends 'landing/base.html' %}
+{% block body %}
+<div class="main">
+    <h2>Your Blogs</h2>
+</div>
+<form method="post" class="formclass">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn">Submit</button>
+</form>
+
+{% endblock %}

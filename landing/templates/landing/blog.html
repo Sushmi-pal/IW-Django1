@@ -1,0 +1,36 @@
+{% extends 'landing/base.html' %}
+{% block body %}
+<div class="all">
+<h1 id="blogh1">List Of Blogs</h1>
+{% for i in data %}
+  {{i.created_at}}-{{i.updated_at}}
+<div class='tfortable'align="center" >
+<div class="card-header">
+    <h2>By</h2> <a class='new' href="/landing/desc/{{i.author.id}}" ><h2>{{i.author.name}}</h2></a>
+  </div>
+    <div class="card-body">
+    <h2 class="card-title">Title:<br>{{i.title}}</h2>
+      <h2>Summary:</h2>
+    <p class="card-text">{{i.summary}}</p>
+    <a class='abc' href="/landing/detail/{{i.id}}" ><h3>Read More</h3></a>
+  </div>
+  <div class="card-footer text-muted">
+    <!--<h3>Created At:{{i.created_at}} and-->
+      <!--Updated At{{i.updated_at}}<br>-->
+      About Author:</h3><a class='new' href="/landing/desc/{{i.author.id}}" ><h3>{{i.author.name}}</h3></a>
+      <br>
+      <br>
+  </div>
+</div>
+
+<br>
+<br>
+
+
+
+
+
+    {% endfor %}
+  </div>
+
+{% endblock %}
